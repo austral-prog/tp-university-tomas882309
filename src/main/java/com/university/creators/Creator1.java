@@ -1,13 +1,19 @@
-package com.university;
+package com.university.creators;
 
-import java.util.*;
+import com.university.objects.Course;
+import com.university.objects.Student;
 
-public class Creator {
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class Creator1 {
 
     private Map<String, Student> students;
     private Map<String, Course> courses;
 
-    public Creator(List<String[]> csvData) {
+    public Creator1(List<String[]> csvData) {
         this.students = new HashMap<>();
         this.courses = new HashMap<>();
         CreateStudentAndCourse(csvData);

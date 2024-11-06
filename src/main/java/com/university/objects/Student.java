@@ -1,17 +1,24 @@
-package com.university;
+package com.university.objects;
+
+import com.university.CLI.Entity;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
-public class Student {
+
+public class Student implements Entity {
+    private static int countStudents = 0;
+    private int id;
 
     private String name;
     private String email;
     private List<String> courses = new ArrayList<String>();
 
     public Student(String name, String email) {
+
         this.name = name;
         this.email = email;
+        this.id=countStudents;
+        countStudents++;
     }
     public String getName() {
         return this.name;
@@ -31,8 +38,14 @@ public class Student {
         }
     }
 
-    public int compareTo(Student other) {
-        return this.name.compareTo(other.name);
+    @Override
+    public int getId() {
+        return this.id;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
     }
 }
 

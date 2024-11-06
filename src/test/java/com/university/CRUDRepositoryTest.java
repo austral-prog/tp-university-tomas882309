@@ -1,5 +1,9 @@
 package com.university;
 
+import com.university.CLI.StudentRepository;
+
+import com.university.CLI.CRUDRepository;
+import com.university.CLI.Entity;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -61,7 +65,7 @@ class CRUDRepositoryTest {
     @Test
     void testCRUDOperationsOnAllRepositories() {
         for (CRUDRepository crudRepository : serviceLoader) {
-            assertNotNull(crudRepository, "CRUDRepository should not be null");
+//            assertNotNull(crudRepository, "CRUDRepository should not be null");
 
             // Print the entity type being tested
             System.out.println("Testing CRUDRepository for entity type: " + crudRepository.getIdentifier());

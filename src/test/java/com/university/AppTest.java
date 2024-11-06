@@ -15,7 +15,7 @@ public class AppTest {
 
     @Test
     public void testSolutionCSVMatchesExpected() {
-        String solutionFilePath = "src/main/resources/solution.csv";
+        String solutionFilePath = "src/main/resources/solution1.csv";
         String expectedFilePath = "src/main/resources/expected.csv";
 
         // Check if solution.csv exists before running the test
@@ -42,11 +42,11 @@ public class AppTest {
             String solutionLine;
             String expectedLine;
 
-            while ((solutionLine = solutionReader.readLine()) != null && 
+            while ((solutionLine = solutionReader.readLine()) != null &&
                    (expectedLine = expectedReader.readLine()) != null) {
                 assertEquals(expectedLine, solutionLine, "Mismatch found in the CSV file content.");
             }
-            
+
             // Ensure both files have the same number of lines
             assertEquals(solutionReader.readLine(), expectedReader.readLine(), "Files have different number of lines.");
 
