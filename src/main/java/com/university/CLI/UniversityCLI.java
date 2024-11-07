@@ -9,10 +9,10 @@ import java.util.Scanner;
 
 public class UniversityCLI implements CLI {
     private final Scanner scanner = new Scanner(System.in);
-    private List<String> studentNames;  // Lista con los nombres de estudiantes
-    private List<Integer> courseCounts;  // Lista con el número de cursos de cada estudiante
+    private List<String> studentNames;
+    private List<Integer> courseCounts;
 
-    // Constructor que acepta las listas de nombres y número de cursos
+
     public UniversityCLI(List<String> studentNames, List<Integer> courseCounts) {
         this.studentNames = studentNames;
         this.courseCounts = courseCounts;
@@ -31,7 +31,7 @@ public class UniversityCLI implements CLI {
     private <T extends com.university.CLI.Entity> void handleCRUDOperations(CRUDRepository<T> repository) {
         System.out.println("Choose an operation: [1] Create, [2] Read, [3] Update, [4] Delete");
         int operation = scanner.nextInt();
-        scanner.nextLine();  // Consumir el salto de línea
+        scanner.nextLine();
 
         switch (operation) {
             case 1 -> createEntity(repository);
@@ -47,14 +47,14 @@ public class UniversityCLI implements CLI {
         if (repository.getEntityClass().getSimpleName().equals("Student")) {
             System.out.println("Creating a new student...");
 
-            // Solicitar datos del nuevo estudiante
+
             System.out.print("Enter student name: ");
             String name = scanner.nextLine();
             System.out.print("Enter number of courses: ");
             int courseCount = scanner.nextInt();
-            scanner.nextLine();  // Consumir el salto de línea
+            scanner.nextLine();
 
-            // Agregar el nuevo estudiante a las listas
+
             studentNames.add(name);
             courseCounts.add(courseCount);
 
@@ -83,16 +83,16 @@ public class UniversityCLI implements CLI {
         if (repository.getEntityClass().getSimpleName().equals("Student")) {
             System.out.println("Enter the index of the student to update: ");
             int index = scanner.nextInt();
-            scanner.nextLine();  // Consumir el salto de línea
+            scanner.nextLine();
 
             if (index >= 0 && index < studentNames.size()) {
                 System.out.print("Enter new name: ");
                 String newName = scanner.nextLine();
                 System.out.print("Enter new course count: ");
                 int newCourseCount = scanner.nextInt();
-                scanner.nextLine();  // Consumir el salto de línea
+                scanner.nextLine();
 
-                // Actualizar el nombre y el número de cursos
+
                 studentNames.set(index, newName);
                 courseCounts.set(index, newCourseCount);
 
@@ -110,10 +110,10 @@ public class UniversityCLI implements CLI {
         if (repository.getEntityClass().getSimpleName().equals("Student")) {
             System.out.println("Enter the index of the student to delete: ");
             int index = scanner.nextInt();
-            scanner.nextLine();  // Consumir el salto de línea
+            scanner.nextLine();
 
             if (index >= 0 && index < studentNames.size()) {
-                // Eliminar el estudiante de las listas
+
                 studentNames.remove(index);
                 courseCounts.remove(index);
                 System.out.println("Student deleted successfully.");

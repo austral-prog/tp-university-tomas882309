@@ -21,7 +21,7 @@ public class App {
 
         SolutionData1 Solution1 = new SolutionData1(creator1.getStudents());
         Solution1.Solution();
-//        Solution1.sendSolution();
+        Solution1.sendSolution();
 
 
 
@@ -31,7 +31,7 @@ public class App {
 
         SolutionData2 Solution2 = new SolutionData2(creator2.getEvaluations());
         Solution2.solution();
-//        Solution2.sendSolution();
+        Solution2.sendSolution();
 
 
 
@@ -42,7 +42,7 @@ public class App {
 
         SolutionData3 Solution3 = new SolutionData3(creator3.getStatus());
         Solution3.Solution();
-//        Solution3.sendSolution();
+        Solution3.sendSolution();
 
 
 
