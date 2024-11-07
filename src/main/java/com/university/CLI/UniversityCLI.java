@@ -70,7 +70,7 @@ public class UniversityCLI implements CLI {
             System.out.println("Displaying all students:");
             int j = 0;
             for (int i = 0; i < studentNames.size(); i++) {
-                System.out.println("id:" + j + ", Student: " + studentNames.get(i) + ", Courses Enrolled: " + courseCounts.get(i));
+                System.out.println("id:" + j + ", Student: " + studentNames.get(i) + ", Course Count: " + courseCounts.get(i));
                 j++;
             }
         } else {
